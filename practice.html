@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+   </head>
+
 <body>
-    <div id="show"></div>
+
+    <div id="result"></div>
+
     <script>
+       function odd_even(){
+        let num = prompt ("Enter any number ", "")
 
-       let welcome = "";
-       welcome = (a) => "Welcome -" + a;
-       let x = prompt ("Enter any name" ,"")
-
+        if (num %2== 0){
+           document.getElementById("result") .innerHTML = "even"
+        }else{
+            document.getElementById("result") .innerHTML = "odd" 
+        }
+    }
        
 
-       document.getElementById("show").innerHTML = welcome (x);
 
 
-
-        
-
- </script>
+    </script>
+    <button onclick="odd_even()">Click here</button>
+  
     
 </body>
 </html>

@@ -7,7 +7,11 @@
 </head>
 <body>
     <!--Factorial with For Loop-->
+
+    <div id="show"></div>
 <script>
+
+    
     function factCalc() {
         let num = prompt ("enter any number" ,"");
         let fact = 1;
@@ -17,8 +21,12 @@
     for(let i = num; i>=1; i--) {
     fact = fact * i;
     }
-    alert(fact);
+   // alert(fact);
+   document.getElementById("show").innerHTML = "This fact is" + fact
     }
+
+
+    
     </script>
 
     <button onclick="factCalc()">Click here</button>
