@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <strong>ID :</strong>
+        <input type="text" name="id" placeholder="enter id"><br><br>
+        <strong>Name :</strong>
+        <input type="text" name="name" placeholder="enter name"><br><br>
+        <strong>Course :</strong>
+        <input type="text" name="course" placeholder="enter course"><br><br>
+        <strong>Year/section :</strong>
+        <input type="text" name="year" placeholder="enter year"><br><br> 
+
+        <button onclick="data()">Submit</button>
+
+</form>
+
+
+<script>
+    function data(){
+        let id = document.myform.id.value;
+        let name = document.myform.name.value;
+        let course = document.myform.course.value;
+        let year = document.myform.year.value;
+
+        if(id == ""){
+            alert(" Id must be entered");
+
+        }else if(name == ""){
+            alert(" Name must be entered");
+        }else if(course == ""){
+            alert(" Course must be entered");
+        }else if(year == ""){
+            alert(" Year must be entered");
+
+        }else {
+            let mywindow = window.open ("" , "abc" , "Width=800, height=600")
+            let output;
+            output ="<h1>STUDENT INFORMATION</h1>" ;
+            output += "Student id : " + id + "<br>";
+            output += "Name : " + name + "<br>";
+            output += "Course : " + course + "<br>";
+            output += "Year : " + year+ "<br>";
+
+            mywindow.document.write(output);
+        }
+        
+         }
+
+
+
+
+
+
+
+
+     //   let pattern = /[A-z0-9]/;
+       // let result = id.search(pattern);
+
+       // let mywindow = window.open("" , "abc" ,"width=800, height=600");
+
+        
+      //  mywindow.document.write("STUDENT ID -" +id + "<br>" );
+      //  mywindow.document.write("NAME -" + name +"<br>");
+       // mywindow.document.write("COURSE -"+ course +"<br>");
+       // mywindow.document.write("YEAR -" + year);
+
+      //  let output;
+       // output = " <h1>STUDENT INFORMATION</h1>"
+       // output += "" 
+
+
+
+        
+
+    
+
+
+
+</script>
+    
+</body>
+</html>
