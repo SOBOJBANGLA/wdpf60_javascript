@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainne</title>
+</head>
+<body>
+    <h1>Trainee Data</h1>
+    <form action="" name="myform">
+
+        <strong>Name : &nbsp&nbsp</strong>
+        <input type="text" name="name" ><br><br>
+        <strong>Contact : &nbsp&nbsp</strong>
+        <input type="text" name="contact" ><br><br>
+        <strong>Address : &nbsp&nbsp</strong>
+        <textarea name="adress" ></textarea><br><br>
+        <strong>Sex : &nbsp&nbsp</strong>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female <br><br>
+     <strong>Courses : &nbsp&nbsp</strong>
+     <input type="checkbox" name="nt" value="NT" class="course">NT
+     <input type="checkbox" name="iad" value="IAD" class="course">IAD
+     <input type="checkbox" name="ddd" value="DDD" class="course">DDD
+     <input type="checkbox" name="esad" value="ESAD" class="course">ESAD <br><br>
+
+     <strong>Location : &nbsp&nbsp</strong>
+     <select name="location" >
+        <option value="Select">Select one</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+     </select><br><br>
+
+     <button type="button" onclick="trainee()">Submit</button>
+ </form>
+
+<script>
+    function trainee(){
+        let name =document.myform.name.value ;
+        let contact =document.myform.contact.value ;
+        let adress =document.myform.adress.value ;
+        let sex =document.myform.gender.value ;
+        let course = document.getElementsByClassName("course")
+        let cd = "" 
+
+        for (let i = 0 ; i <course.length; i++){
+            if(course[i].checked){
+                cd += course[i].value +",  "
+            }
+        }
+    
+    let location = document.myform.location.value ;
+
+    let mw = window.open("", "abc" ,"width= 500 ,height = 600")
+    let output;
+    output = "<h1>Trainee Data</h1>";
+    output += "Name : &nbsp" + name + "<br><br>";
+    output += "Contact : &nbsp" + contact + "<br><br>";
+    output += "Address : &nbsp" + adress + "<br><br>";
+    output += "Sex : &nbsp" + sex + "<br><br>";
+    output += "Course : &nbsp" + cd + "<br><br>";
+    output += "Location : &nbsp" + location + "<br><br>";
+
+    mw.document.write(output);
+
+    document.g
+    
+    }
+
+
+</script>
+</body>
+</html>

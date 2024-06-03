@@ -4,29 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   </head>
-
+</head>
 <body>
-
-    <div id="result"></div>
-
     <script>
-       function odd_even(){
-        let num = prompt ("Enter any number ", "")
+        function findFactorial(num) {
+  if (num === 0) return 1
+  let factorial = num * findFactorial(num - 1)
+  return factorial;
+}
 
-        if (num %2== 0){
-           document.getElementById("result") .innerHTML = "even"
-        }else{
-            document.getElementById("result") .innerHTML = "odd" 
-        }
-    }
-       
-
-
+document.write(findFactorial(5))
 
     </script>
-    <button onclick="odd_even()">Click here</button>
-  
-    
 </body>
 </html>
