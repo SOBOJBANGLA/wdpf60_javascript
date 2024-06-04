@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trainee</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;">
+            <legend><h1>Trainee Information</h1></legend>
+            <strong>Name : &nbsp&nbsp</strong>
+            <input type="text" name="name" placeholder="Enter name"><br><br>
+            <strong>Contact : &nbsp&nbsp</strong>
+            <input type="text" name="contact" placeholder="Enter contact"><br><br>
+            <strong>Remarks : &nbsp&nbsp</strong>
+            <textarea name="remark" placeholder="Enter remark"></textarea><br><br>
+             <strong>Sex : &nbsp&nbsp</strong>
+             <input type="radio" name="gender" value="Male">Male 
+             <input type="radio" name="gender" value="Female">Female <br><br>
+            <strong>Courses : &nbsp&nbsp</strong>
+            <input type="checkbox" name="NT" value="NT" class="course">NT
+            <input type="checkbox" name="IAD" value="IAD" class="course">IAD
+            <input type="checkbox" name="DDD" value="DDD" class="course">DDD
+            <input type="checkbox" name="ESAD" value="ESAD" class="course">ESAD <br><br>
+            <strong>Location : &nbsp&nbsp</strong>
+            <select name="location" >
+                <option value="Select One">Select One</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select><br><br>
+
+            <button type="button" onclick="train()">Submit</button>
+
+        </fieldset>
+    </form>
+
+    <script>
+        function train(){
+            let name = document.myform.name.value ;
+            let contact = document.myform.contact.value ;
+            let remark = document.myform.remark.value ;
+            let sex = document.myform.gender.value ;
+            let course = document.getElementsByClassName("course");
+            let cd = ""
+
+            for (let i = 0 ; i <course.length; i++){
+                if (course[i].checked){
+                    cd += course[i].value + ", "
+                }
+            }
+            let location = document.myform.location.value ;
+
+            let mw = window.open ("" , "abc" , "width = 600 , height = 600")
+            let output;
+            output = "<h1>Trainee Information</h1>";
+            output += "Name : &nbsp&nbsp" + name + "<br><br>";
+            output += "Contact : &nbsp&nbsp" + contact + "<br><br>";
+            output += "Remark : &nbsp&nbsp" + remark + "<br><br>";
+            output += "Sex : &nbsp&nbsp" + sex + "<br><br>";
+            output += "Courses : &nbsp&nbsp" + cd + "<br><br>";
+            output += "Location : &nbsp&nbsp" + location + "<br><br>";
+
+            mw.document.write(output)
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

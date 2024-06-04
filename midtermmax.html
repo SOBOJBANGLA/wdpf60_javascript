@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max-min</title>
+</head>
+
+<body>
+    <h1>Ans no -3</h1>
+
+
+    <script>
+        function cv(){
+        let numc = prompt("20,50,80")
+
+        let num = [20, 50, 80]
+
+        let max = num[0];
+
+        let min = num[0];
+
+
+
+        for (let i = 1; i < num.length; i++) {
+            if (num[i] > max) {
+                max = num[i];
+            }
+        }
+
+        for (let i = 1; i < num.length; i++) {
+            if (num[i] < min) {
+                min = num[i];
+            }
+        }
+        document.write("Numbers =" + num + "<br>")
+        document.write("Maximum number-" + max + "<br>");
+        document.write("Minimum number-" + min);
+
+        }
+
+    </script>
+    <button onclick="cv()">Click</button>
+</body>
+
+</html>

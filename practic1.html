@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="myform">
+        Email : <input type="text" name="email" id="">
+
+        <button type="button" onclick="emailCheck()">Check</button>
+
+
+
+
+    </form>
+
+    <script>
+        function emailCheck() {
+            let email = document.myform.email.value
+
+            let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/
+            let result = email.search(pattern)
+
+            if (result == -1) {
+                alert("Email is not correct")
+            } else {
+                alert("Email is correct")
+            }
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
