@@ -10,7 +10,7 @@
    <div id="show"></div>
    
  <script>
-        class Student {
+     /*   class Student {
             constructor(name , dob ,email,address){
                 this.stname = name;
                 this.stdob = dob;
@@ -35,7 +35,28 @@
         const st2 = new Student ("Mohiuddin", "2 October" , "mohiuddincr7@gmail.com", "Madaripur")
 
        // document.write (st1.info())
-       document.getElementById("show").innerHTML =st1.info()+st2.info() ;
+       document.getElementById("show").innerHTML =st1.info()+st2.info() ;*/
+
+       class Car{
+        constructor(name,age){
+            this.cname = name ;
+            this.cage = age ;
+
+        }
+        data(){
+            let details;
+            details = "<hr>";
+            details +="Name : "+this.cname + "<br>";
+            details +="Age : "+this.cage + "<br>";
+            return details;
+        }
+       }
+       const c1 = new Car ("Ford" , "20Year")
+       const c2 = new Car ("Toyota" , "10Year")
+
+       document.getElementById("show").innerHTML =c1.data()+c2.data()
+
+
 
     </script>
 </body>
