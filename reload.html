@@ -6,15 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        function findFactorial(num) {
-  if (num === 0) return 1
-  let factorial = num * findFactorial(num - 1)
-  return factorial;
-}
+    <h1>The Window Location Object</h1>
+<h2>The reload Property</h2>
+<button onclick="reloadFile()">Click</button>
+<script>
+    function reloadFile(){
+        location.reload();
+    }
 
-document.write(findFactorial(5))
 
-    </script>
+
+</script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+
+    <script>
+    setInterval(myFunction, 1000);
+    
+    function myFunction() {
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+      const months = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October","November", "December"]
+
+      let d = new Date();
+      let h = d.getHours();
+      let m = d.getMinutes();
+      let s = d.getSeconds();
+      let date = d.getDate();
+      let month = d.getMonth();
+      let year = d.getFullYear();
+      let day = d.getDay();
+
+      let custom = "";
+      custom += "Time :"+ h+ ":"+m +":" +s + " ; "+ " " + days[day]+ " , " + + date + " " +months[month] + " " +year 
+
+
+      document.getElementById("demo").innerHTML = custom;
+     
+
+      
+      
+    }
+    </script>
+</body>
+</html>
