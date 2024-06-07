@@ -8,20 +8,30 @@
 <body>
     <div id="show"></div>
     <script>
-        let current = new Date () ;
+       /* let current = new Date () ;
 
         //let result = current.getDate() ; // Today's date
        // let result = current.getHours() ; // Hour
        //let result = current.getMinutes() ; // minute
        let result = current.getDay() ; // day
       //let result = current.getFullYear() ; // full year
-    
-
-
-
 
        document.getElementById("show").innerHTML = current
-     // document.getElementById("show").innerHTML = Date.now() ; 
+     // document.getElementById("show").innerHTML = Date.now() ; */
+
+     let current = new Date();
+
+     let res1 = current.getDate(); 
+     let res5 = current.getMonth();
+     let res6 = current.getFullYear()+ "<br>";
+     let res2 = current.getHours() ;
+     let res3= current.getMinutes();
+     let res4 = current.getSeconds();
+
+
+
+    // document.getElementById("show").innerHTML = current
+    document.getElementById("show").innerHTML = res1 +"/"+res5+"/" +res6 +res2+ ":"+res3+ ":"+res4
 
 
 

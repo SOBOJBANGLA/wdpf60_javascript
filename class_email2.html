@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class-email-form</title>
+</head>
+<body>
+    <form action="" name="my_form">
+        <input type="email" name="email" placeholder="email here"> <br>
+        
+        <button type="button" onclick="newForm.checkData()">Submit</button>
+    </form>
+
+    <script>
+
+        class formValidation{
+            constructor(email) {
+                this.cemail = email;
+                
+            }
+            checkData(){
+               
+                let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/
+                if(this.cemail.search(pattern)){
+                    
+                    alert("Email Address is wrong");
+                    
+                }
+               else{
+                    alert("Email Address is correct")
+                }
+            }
+        }
+        let demail = document.my_form.email.value;
+        
+        const newForm = new formValidation(demail);
+        let result = newForm.checkData();
+               alert(result);
+
+
+    </script>
+</body>
+</html>

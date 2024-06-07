@@ -8,7 +8,7 @@
 <body>
     <p id="demo"></p>
     <script>
-        const person = {
+       /* const person = {
           firstname: "John",
           lastname: "Doe",
           age: 50,
@@ -19,7 +19,20 @@
        delete person["age"];
         
         document.getElementById("demo").innerHTML =
-        person.firstname + " is " + person.age + " years old.";
+        person.firstname + " is " + person.age + " years old."; */
+
+        const person = {
+          firstName : "John" ,
+          lastName : "Doe" ,
+          age: 50 ,
+          haircolor : "black"
+
+        }
+        delete person["age"]
+
+        document.getElementById("demo").innerHTML = person.firstName + " is " + person.age + " years old."
+
+
         </script>
     
 </body>

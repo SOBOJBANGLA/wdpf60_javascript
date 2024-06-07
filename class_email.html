@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classEmail</title>
+</head>
+<body>
+        <h3>Email Validation</h3>
+        
+     <script>
+            class EmailCheck {
+                constructor(demail) {
+                    this.cemail = demail;
+                }
+
+                validEmail() {
+                    let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+                    if (this.cemail.search(pattern)) {
+                        alert ("Email Address is wrong");
+                    } else {
+                        alert("Email Address is correct");
+                    }
+                }
+                }
+
+                let email = prompt("Enter your email address:");
+                let validate = new EmailCheck(email);
+                let result = validate.validEmail();
+               // alert(result);
+
+     </script>
+
+     
+
+
+    
+</body>
+</html>

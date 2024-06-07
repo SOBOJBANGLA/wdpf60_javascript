@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         table {
+         /* table {
             border: 1px solid black;
             border-collapse: collapse;
         }
         th, td {
             border: 1px solid black ;  
+        } */
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
         }
 
     </style>
@@ -19,7 +27,7 @@
 </head>
 <body>
     <script>
-        const fruits = new Array("Apple","Jackfruits","Orange","Banana","Watermalon");
+      /*  const fruits = new Array("Apple","Jackfruits","Orange","Banana","Watermalon");
 
         let i = 0;
         let output = "<table>";
@@ -36,7 +44,28 @@
         }
         output += "</table>";
         
-        document.write(output);
+        document.write(output);*/
+
+        const students = ["Masud" , "Tanim","Babul" ,"Dulal","Rakib"];
+
+        let output;
+        output = "<table>" ;
+        output += "<h1>Student List </h1>" ;
+        output += "<tr><th>SN</th><th>Name</th></tr>"
+
+        for(let i =0 ; i< students.length; i++){
+            sn = i+1 ;
+            output += "<tr><td>"+sn +"</td>" + "<td>"+students[i] +"</td> </tr>"
+        }
+          
+        output += "</table>" ;
+        document.write(output)
+        
+
+
+
+
+
     </script>
 </body>
 </html>

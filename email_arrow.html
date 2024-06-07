@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="" name="myform">
+    <!-- <form action="" name="myform">
         <strong>Email : &nbsp</strong>
         <input type="text" name="email3" placeholder="Enter email"> <br><br>
         <strong>Confirm Email : &nbsp</strong>
@@ -16,13 +16,11 @@
 
         <button type="button" onclick="email()">Click</button>
 
-
-    </form>
+    </form> -->
 
     <script>
-       
 
-      const email = () => {
+     /* const email = () => {
             let email1 =document.myform.email3.value
             let email2 =document.myform.con_email.value
 
@@ -36,13 +34,50 @@
             }else {
                 alert ("valid")
             }
-            
+
+        }*/
+    </script>
+
+    <form action="" name="myform">
+        <b>Email: &nbsp</b>
+        <input type="text" name="email" placeholder="Enter email"><br><br>
+        <b>Confirm email: &nbsp</b>
+        <input type="text" name="con_email" placeholder="Enter confirm email"><br><br>
+
+        <button type="button" onclick="emailValidate()">Click here</button>
+
+
+    </form>
+
+    <script>
+        const emailValidate = () => {
+            let email1 = document.myform.email.value ;
+            let email2 = document.myform.con_email.value ;
+
+            let pattern =/[A-z0-9]+@[A-z]+\.[A-z]/
+            let result = email1.search(pattern);
+
+            if (result == -1){
+                alert("Email is not valid")
+            }else if (email1 != email2){
+                alert("Email is not matched")
+            }else{
+                alert("Valid")
+            }
 
 
         }
 
 
+
+        
+
+
+
     </script>
+
+
+
 </body>
 
 </html>
