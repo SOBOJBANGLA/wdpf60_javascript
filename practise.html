@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email_class</title>
+</head>
+<body>
+
+    <script>
+        class Emailcheck{
+            constructor(email){
+                this.cemail = email;
+            }
+
+            batpar(){
+                let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+                 
+                if(this.cemail.search(pattern)){
+                    document.write("Email is wrong");
+                }else{
+                    document.write ("Email is correct");
+                }
+
+
+            }
+
+        }
+
+        function cmail(){
+
+            let m = prompt("Enter your email address");
+            let abd = new Emailcheck(m);
+            abd.batpar();
+        }
+
+
+
+
+    </script>
+
+    <button type ="button" onclick="cmail()">Click</button>
+    
+</body>
+</html>
+
