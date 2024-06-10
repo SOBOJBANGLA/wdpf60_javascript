@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="validation.js"></script>
+    <!-- <script src="validation.js"></script> -->
 </head>
 <body>
     <form action="" name="login">
@@ -15,10 +15,29 @@
     </form>
 
     <script>
-        function checkMail(){
+        class Validation{
+    constructor(email){
+        this.email = email;
+
+    }
+    validate(){
+        let pattern = /[A-z0-9._]+@[A-z0-9]+\.[A-z]{2,4}/;
+        if(this.email.search(pattern)==-1){
+           // alert("Please enter a valid email address");
+           alert("Email is wrong")
+    }else{
+        //alert("Valid email address")
+        alert("Email is correct")
+    }
+
+}
+
+}
+        
+function checkMail(){
             let m =document.login.email.value;
-           /* let num =/[0-9]/
-            let result = m.search(num)
+           /* let pattern1 =/[0-9]/
+            let result = m.search(pattern1)
             if (m == ""){
                 alert("Can't be empty")
             
