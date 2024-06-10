@@ -7,6 +7,9 @@
 </head>
 <body>
 
+    <div id="show"></div>
+
+
     <script>
         class Emailcheck{
             constructor(email){
@@ -17,9 +20,9 @@
                 let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
                  
                 if(this.cemail.search(pattern)){
-                    document.write("Email is wrong");
+                    document.getElementById("show").innerHTML="Email is wrong";
                 }else{
-                    document.write ("Email is correct");
+                    document.getElementById("show").innerHTML="Email is correct";
                 }
 
 
