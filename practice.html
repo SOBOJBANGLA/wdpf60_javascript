@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <script src="valid.js"></script> -->
 </head>
 <body>
+    <form action="" name="myform" >
+        <b>Email</b><br><br>
+        <input type="text" name="email" placeholder="Enter email"><br><br>
+        <b>Password</b><br><br>
+        <input type="password" name="password" placeholder="Enter password"><br><br> 
+
+        <!-- <input type="submit" value="Login" onclick="data()" name="submit">  -->
+
+        <button type="button" onclick="gomti()">Login</button>
+
+    </form>
+
+    <script>
+        class Validation{
+    constructor(email){
+       // super(email, password);
+        this.email = email;
+       
+
+}
+
+emailCheck(){
+    let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+    if(this.email.search(pattern)){
+        alert("Email is not Valid");
+    }else{
+        alert(" Valid");
+    }
+
+}
+
+
+}
+       
+        function gomti(){
+        let m =document.myform.email.value;
+        let n =document.myform.password.value;
+
+        if (n.length <6){
+            alert ("password must be at least 6 characters")
+        }else{
+            let obj = new Validation(m);
+        //let obj1 = new Validation(n);
+
+        obj.emailCheck();
+
+        }
+
+    }
+
     
+    
+
+    
+
+
+    </script>
     
 </body>
 </html>
