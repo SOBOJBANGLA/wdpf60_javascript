@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trainee-data</title>
+</head>
+<body>
+    <h1>Trainee Data</h1>
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;">
+        <b>Name:&nbsp</b><input type="text" name="name" placeholder="Enter name"><br><br>
+        <b>Contact:&nbsp</b><input type="text" name="con" placeholder="Enter Contact"><br><br>
+        <b>Remarks:&nbsp</b><textarea name="rem" ></textarea><br><br>
+        <b>Sex:&nbsp</b><input type="radio" name="gen" value="Male">Male
+        <input type="radio" name="gen" value="Female">Female <br><br>
+        <b>Courses:&nbsp</b>
+        <input type="checkbox" name="NT" value="NT" class="cf">NT
+        <input type="checkbox" name="IAD" value="IAD" class="cf">IAD
+        <input type="checkbox" name="DDD" value="DDD" class="cf">DDD
+        <input type="checkbox" name="ESAD" value="ESAD" class="cf">ESAD<br><br>
+        <b>Location:&nbsp</b>  
+        <select name="loc" >
+            <option value="Choose Location">Choose Location</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option>
+        </select> <br><br>
+
+        <button type="button" onclick="dte()">Submit</button>
+
+
+        </fieldset>
+    </form>
+
+    <script>
+        function dte(){
+            let name = document.myform.name.value;
+            let con =document.myform.con.value;
+            let rem =document.myform.rem.value;
+            let gen = document.myform.gen.value;
+            let cour =document.getElementsByClassName("cf");
+            let cd ="";
+
+            for(let i = 0 ; i<cour.length;i++){
+                if(cour[i].checked){
+                    cd += cour[i].value + " ;"
+                }
+            }
+            let loc =document.myform.loc.value;
+
+            let mw = window.open("","abc","width =600,height=600");
+
+            let output;
+            output="<h1>Trainee Information</h1>";
+            output+= "Name:&nbsp&nbsp"+name +"<br>";
+            output+= "Contact:&nbsp&nbsp"+con +"<br>";
+            output+= "Remarks:&nbsp&nbsp"+rem +"<br>";
+            output+= "Sex:&nbsp&nbsp"+gen +"<br>";
+            output+= "Courses:&nbsp&nbsp"+cd +"<br>";
+            output+= "Location:&nbsp&nbsp"+loc +"<br>";
+
+            mw.document.write(output)
+
+        }
+
+
+    </script>
+</body>
+</html>

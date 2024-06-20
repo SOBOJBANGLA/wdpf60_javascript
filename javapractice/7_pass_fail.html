@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass-fail</title>
+</head>
+<body>
+    <div id="show"></div>
+
+    <script>
+        function pass(){
+            let mcq = prompt("Enter MCQ number","");
+            let des = prompt("Enter Descriptive number","");
+            let ev = prompt("Enter Evidence number","");
+
+            if(mcq >= 80 && des >=60 && ev >=60){
+                document.getElementById("show").innerHTML = "Pass"
+            }else{
+                 document.getElementById("show").innerHTML = "Fail"
+            }
+            
+        }
+
+
+
+    </script>
+    <button onclick="pass()">Click</button>
+</body>
+</html>

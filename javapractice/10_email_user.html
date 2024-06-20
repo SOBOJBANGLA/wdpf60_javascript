@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Validate</title>
+</head>
+<body>
+    <h2>Login form</h2>
+    <form action="" name="myform">
+       <b>User Name:&nbsp</b> <input type="text" name="name" placeholder="Enter User Name"><br><br>
+
+       <b>Email:&nbsp</b> <input type="text" name="email" placeholder="Enter email"><br><br>
+
+       <b>Confirm Email:&nbsp</b> <input type="text" name="con_email" placeholder="Enter confirm email"><br><br>
+
+       <b>Password:&nbsp</b> <input type="password" name="password" placeholder="Enter password"><br><br>
+
+       <button type="button" onclick="log()">Login</button>
+    </form>
+
+    <script>
+        function log(){
+            let name =document.myform.name.value ;
+            let email1 =document.myform.email.value ;
+            let email2 =document.myform.con_email.value ;
+            let pass =document.myform.password.value ;
+
+            let pattern= /[A-z0-9]+@[A-z]+\.[A-z]/;
+            let result = email1.search(pattern);
+
+            if(name.length <6){
+                alert("User name must be 6 Character long")
+            }else if(result == -1){
+                alert("Email is invalid")
+            }else if (email1 != email2){
+                alert("Email is not matched")
+            }else if(pass.length <8){
+                alert("Password must be 8 Character long")
+            }else{
+                alert("Valid")
+            }
+
+            
+        }
+
+    </script>
+</body>
+</html>

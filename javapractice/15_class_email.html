@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> class-email</title>
+</head>
+<body>
+    <form action="" name="myform">
+        Email: <input type="text" name="email" placeholder="Enter email"><br><br>
+        <button type="button" onclick="data()">Check</button>
+    </form>
+
+    <script>
+        class Emailcheck{
+            constructor(email){
+                this.email = email
+            }
+
+            valid(){
+                let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+                let result = this.email.search(pattern);
+
+                if(result == -1){
+                    alert("Email is wrong")
+                }else{
+                    alert("Email is correct")
+                }
+            }
+        }
+
+        function data(){
+            let m =document.myform.email.value;
+
+            let obj = new Emailcheck(m);
+
+            obj.valid()
+        }
+
+
+    </script>
+</body>
+</html>

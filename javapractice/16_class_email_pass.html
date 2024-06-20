@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> class-pass-email</title>
+</head>
+<body>
+    <form action="" name="myform">
+        Email: <input type="text" name="email" placeholder="Enter email"><br><br>
+        Password: <input type="password" name="pass" placeholder="Enter password"><br><br>
+        <button type="button" onclick="data()">Check</button>
+    </form>
+
+    <script>
+        class Emailcheck{
+            constructor(email,password){
+                this.email = email
+                this.password=password
+            }
+
+            valid(){
+                let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+                let result = this.email.search(pattern);
+
+                if(result == -1){
+                    alert("Email is invalid")
+                }else if(this.password.length <6){
+                    alert("Password must be 6 character")
+                }else{
+                    alert("Email is valid")
+                }
+            }
+        }
+
+        function data(){
+            let m =document.myform.email.value;
+            let n =document.myform.pass.value;
+
+            let obj = new Emailcheck(m,n);
+
+            obj.valid()
+        }
+
+
+    </script>
+</body>
+</html>

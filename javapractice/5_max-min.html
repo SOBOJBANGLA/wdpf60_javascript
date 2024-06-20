@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max-min</title>
+</head>
+<body>
+    <script>
+        let numcv = prompt("20,50,60");
+        
+        let num = [20,50,60];
+
+        let max = num[0];
+        let min = num[0];
+
+        for(let i = 1 ; i <num.length;i++){
+            if(num[i]>max){
+                max = num[i]
+            }
+        }
+        document.write("Number- "+num+"<br>");
+        document.write("Maximum number- "+max+"<br>");
+
+        for(let i = 1 ; i <num.length;i++){
+            if(num[i]<min){
+                min = num[i]
+            }
+        }
+        document.write("Minimum number- "+min+"<br>");
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

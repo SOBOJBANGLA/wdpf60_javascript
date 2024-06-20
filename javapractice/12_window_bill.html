@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+</head>
+<body>
+   <form action="" name="myform">
+    <h1>Billing Information</h1>
+    <b>First Name:&nbsp;&nbsp;</b>
+     <input type="text" name="name"><br><br>
+     <b>Last Name:&nbsp;&nbsp;</b>
+     <input type="text" name="lname"><br><br>
+     <b>Gender:&nbsp;&nbsp;</b>
+     <input type="radio" name="gender" value="Male">Male
+     <input type="radio" name="gender" value="Female">Female <br><br>
+     <b>Language:&nbsp;&nbsp;</b>
+     <input type="checkbox" name="Telugu" value="Telugu" class="lang">Telugu
+     <input type="checkbox" name="English" value="English" class="lang">English
+     <input type="checkbox" name="Hindi" value="Hindi" class="lang">Hindi <br><br>
+     <b>Email:&nbsp;&nbsp;</b>
+     <input type="text" name="email" ><br><br>
+     <b>Address:&nbsp;&nbsp;</b>
+     <textarea name="add" ></textarea><br><br>
+     <b>State:&nbsp;&nbsp;</b>
+     <select name="state" >
+         <option value="Choose state">Choose state</option>
+         <option value="Cumilla">Cumilla</option>
+         <option value="Dhaka">Dhaka</option>
+         <option value="Bhola">Bhola</option>
+     </select><br><br>
+     <b>Zip:&nbsp;&nbsp;</b>
+     <input type="text" name="zip" ><br><br>
+     <b>Credit Card Type:&nbsp;&nbsp;</b>
+     <select name="card" >
+         <option value="Choose Credit Card">Choose Credit Card</option>
+         <option value="ATM">ATM</option>
+         <option value="MASTER">MASTER</option>
+         <option value="DEBID">DEBID</option>
+     </select><br><br>
+ 
+ <button type="button" onclick="bill()">Submit</button>
+   </form>
+
+<script>
+    function bill(){
+        let name1 = document.myform.name.value ;
+        let name2 = document.myform.lname.value ;
+        let gender = document.myform.gender.value ;
+        let lang = document.getElementsByClassName("lang") ;
+        let lan = "";
+
+        for(let i =0 ; i<lang.length ;i++){
+            if(lang[i].checked){
+                lan += lang[i].value + " ;"
+            }
+        }
+        let email =document.myform.email.value;
+        let add =document.myform.add.value;
+        let state =document.myform.state.value;
+        let zip =document.myform.zip.value;
+        let card =document.myform.card.value;
+
+        let mw = window.open("","abc","width=600,height=600");
+
+        let output;
+        output = "<h1>Billing Information</h1>";
+        output += "First Name:&nbsp;&nbsp;"+name1+ "<br><br>";
+        output += "Last Name:&nbsp;&nbsp;"+name2+ "<br><br>";
+        output += "Gender:&nbsp;&nbsp;"+gender+ "<br><br>";
+        output += "Language:&nbsp;&nbsp;"+lan+ "<br><br>";
+        output += "Email:&nbsp;&nbsp;"+email+ "<br><br>";
+        output += "Address:&nbsp;&nbsp;"+add+ "<br><br>";
+        output += "State:&nbsp;&nbsp;"+state+ "<br><br>";
+        output += "Zip:&nbsp;&nbsp;"+zip+ "<br><br>";
+        output += "Credit Card Type :&nbsp;&nbsp;"+card+ "<br><br>";
+
+        mw.document.write(output);
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window-student</title>
+</head>
+<body>
+    <h1>Data Entry Form</h1>
+
+    <form action="" name="myform">
+        <b>Student ID:&nbsp</b>
+        <input type="text" name="id" ><br><br>
+        <b>Name:&nbsp</b>
+        <input type="text" name="name" ><br><br>
+        <b>Course:&nbsp</b>
+        <input type="text" name="ck" id=""><br><br>
+        <b>Year/Section:&nbsp</b>
+        <input type="text" name="year" id=""><br><br>
+
+        <button type="button" onclick="data()">Submit</button>
+    </form>
+
+    <script>
+        function data(){
+            let id = document.myform.id.value;
+            let name = document.myform.name.value;
+            let course = document.myform.ck.value;
+            let year = document.myform.year.value;
+
+            if(id == ""){
+                alert("Student ID must be filled out")
+            }else if(name == ""){
+                alert("Name must be filled out")
+            }else if(course == ""){
+                alert("Course must be filled out")
+            }else if(year == ""){
+                alert("year must be filled out")
+            }else{
+                let mw =window.open("","abc","width=600 ,height=600")
+
+                let output;
+                output = "<h1>Data Entry Form</h1>";
+                output += "Student ID:&nbsp&nbsp"+ id +"<br>";
+                output += "Name:&nbsp&nbsp"+ name +"<br>";
+                output += "Course:&nbsp&nbsp"+ course +"<br>";
+                output += "Year/Section:&nbsp&nbsp"+ year +"<br>";
+
+                mw.document.write(output)
+
+            }
+
+        }
+
+    </script>
+</body>
+</html>
