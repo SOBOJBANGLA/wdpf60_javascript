@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <fieldset>
+            <strong>Name:</strong>
+            <input type="text" name="name"><br>
+            <strong>Contact:</strong>
+            <input type="text" name="contact"><br>
+            <strong>Remarks:</strong>
+            <textarea name="remarks" ></textarea><br>
+            <strong>Sex:</strong>
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">female <br>
+            
+            <strong>List</strong>
+            <select name="list">
+                <option value="Dhaka">Dhaka</option>
+                <option value="Bonani">Bonani</option>
+        </select><br>
+            
+        <button type="button" onclick="data()" > submit</button>
+
+        </fieldset>
+    </form>
+    <script>
+        class formData{
+            constructor(name,contact,remarks,sex,list){
+                this.nam= name;
+                this.contac= contact;
+                this.remark= remarks;
+                this.sex= sex;
+                //this.course= course;
+                this.lis= list;
+
+            }
+            getdata(){
+               let win = window.open("","abc","width=400,height=200");
+               let output; 
+               output= "<h2> student  information </h2>";
+                output += "Name:" + this.nam + "<br>";
+                output += "Contact:" + this.contac + "<br>";
+                output += "Remarks:" + this.remark + "<br>";
+                output += "Sex:" + this.sex + "<br>";
+                output += "list:" + this.lis+ "<br>";
+               
+               
+               win.document.write(output);
+
+               
+
+            }
+        }
+        
+        function data(){
+           // alert("clicked")
+           let nam = document.myform.name.vlaue;
+           let contac = document.myform.contact.vlaue;
+           let remark = document.myform.remarks.vlaue;
+           let sex = document.myform.gender.vlaue;
+           let lis = document.myform.list.vlaue;
+
+          let obj = new formData(nam,contac,remark,sex,lis);
+          obj.getdata();
+           
+
+
+        }
+
+
+    </script>
+</body>
+</html>

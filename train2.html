@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        Name: &nbsp <input type="text" name="name" placeholder="Enter Name"><br><br>
+        Contact: &nbsp <input type="text" name="con" placeholder="Enter Contact"><br><br>
+        Remarks:&nbsp <textarea  name="rem"></textarea><br><br>
+        Sex:&nbsp <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female <br><br>
+        Courses: <input type="checkbox" name="NT" value="NT" class="cf">NT
+        <input type="checkbox" name="IAD" value="IAD" class="cf">IAD
+        <input type="checkbox" name="DDD" value="DDD" class="cf">DDD
+        <input type="checkbox" name="ESAD" value="ESAD" class="cf">ESAD <br><br>
+
+        Location: <select name="loc" >
+            <option value="Select one"> Select one</option>
+            <option value="Banani">Banani</option>
+            <option value="Dhanmondi">Dhanmondi</option>
+            <option value="Mirpur">Mirpur</option> 
+
+
+        </select><br><br>
+
+        <button type="button" onclick="train()">Submit</button>
+
+    </form>
+    <script>
+        class Trainee{
+        constructor (name,contact,remark,sex,courses,location){
+        this.nam = name;
+        this.contact =contact;
+        this.remark=remark; 
+        this.sex=sex;
+        this.course=courses;
+        this.location=location;
+
+
+        }
+
+        dte(){
+            let mw = window.open("","abc","width=800,height=600")
+        }
+
+
+
+
+        }
+
+        
+        function train(){
+
+            let name =document.myform.name.value;
+            let contact =document.myform.con.value;
+            let remark =document.myform.name.value;
+            let name =document.myform.name.value;
+            let name =document.myform.name.value;
+            let name =document.myform.name.value;
+
+
+
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
