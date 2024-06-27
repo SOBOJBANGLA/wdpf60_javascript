@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+    <strong>Email:</strong>
+    <input type="text" name="email" placeholder="Enter Email Address">
+    <button onclick="data()" type="button">Check</button>
+
+    </form>
+
+
+    <div id="show"></div>
+    <script>
+        class Emailcheck{
+            constructor(email){
+                this.email = email;
+            }
+            emailvalid(){
+                
+                let pattern = /[A-z0-9]+@[A-z]+\.[a-z]/;
+                let result = this.email.search(pattern);
+
+                if(this.email == ""){
+                    document.getElementById("show").innerHTML = "Email must be Filed Out";
+                }else if(result == -1){
+                    document.getElementById("show").innerHTML = "Email Address is Wrong";
+                } else{
+                    document.getElementById("show").innerHTML = "Email Address is Correct";
+                }
+            }
+        }
+
+        function data(){
+            let m = document.myform.email.value;
+
+            let obj = new Emailcheck(m);
+            obj.emailvalid();
+        }
+    </script>
+</body>
+</html>
