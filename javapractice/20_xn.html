@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate x^n</title>
+</head>
+<body>
+    <h1>Calculate \(x^n\)</h1>
+    <p>Enter values for \(x\) and \(n\):</p>
+    <input type="number" id="xValue" placeholder="Enter x">
+    <input type="number" id="nValue" placeholder="Enter n">
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            const x = parseFloat(document.getElementById('xValue').value);
+            const n = parseInt(document.getElementById('nValue').value);
+            const result = Math.pow(x, n);
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>
