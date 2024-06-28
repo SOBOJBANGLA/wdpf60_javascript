@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search String Finder</title>
+</head>
+<body>
+    <form id="searchForm">
+        <label for="mainString">Enter a main string:</label>
+        <input type="text" id="mainString" required>
+        <br>
+        <label for="searchString">Enter a search string:</label>
+        <input type="text" id="searchString" required>
+        <br>
+        <button type="button" onclick="checkSearchString()">Check</button>
+    </form>
+
+    <script>
+        function checkSearchString() {
+            const mainString = document.getElementById("mainString").value;
+            const searchString = document.getElementById("searchString").value;
+
+            const index = mainString.indexOf(searchString);
+
+            if (index !== -1) {
+                alert(`Search string found at index ${index}`);
+            } else {
+                alert("Search string not found in the main string.");
+            }
+        }
+    </script>
+</body>
+</html>
