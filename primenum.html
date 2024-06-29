@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform" onsubmit="alert(prime())">
+        <input type="number" name="num" >
+        <button onclick="prime()">clickcheck</button>
+    </form> 
+
+   
+    <script>
+        function prime(){
+           //let number= prompt("enter your number","");
+            let number=document.myform.num.value;
+            
+            if(number==1){
+                return number + " is not a prime number"
+            }else if (number==2){
+                return number + " is a prime number"
+            }else if(number==0){
+                return number + "0 and blank is not allowed"
+            }else{
+                for(i=2;i<number;i++){
+                    if(number%i==0){
+                      return  number + "is not a prime number"
+                    }
+                } return number + " is a prime number"
+            
+            }
+        }
+         //document.write(prime())
+    
+    </script>
+</body>
+</html>
