@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body>
+    <h1>Ans no -1</h1>
+
+    <form action="" name="myform">
+        <fieldset style="width: fit-content;"><h3>Student Form </h3>
+            <strong>Name:</strong>
+            <input type="text" name="name" placeholder="Enter Name"> <br><br>
+            <strong>Address:</strong>
+            <textarea name="add" ></textarea><br><br>
+            <strong>Gender:</strong>
+            <input type="radio" name="gender" value="Male">Male 
+            <input type="radio" name="gender" value="Female">Female <br><br>
+            <strong>Subject:</strong>
+            <input type="checkbox" name="WDPF" value="WDPF" class="sub">WDPF
+            <input type="checkbox" name="JAVA" value="JAVA" class="sub">JAVA
+            <input type="checkbox" name="GAVE" value="GAVE" class="sub">GAVE <br><br>
+
+            <strong>Current Location:</strong>
+            <select name="loc" >
+                <option value="">Select one</option>
+                <option value="Banani">Banani</option>
+                <option value="Malibagh">Malibagh</option>
+                <option value="Kakrail">Kakrail</option>
+            </select><br><br>
+
+            <button type="button" onclick="data()">Submit</button>
+        </fieldset>
+    </form>
+
+    <script>
+        class Student{
+            constructor(name,address,gender,subject,location){
+                this.name = name;
+                this.add = address;
+                this.gen = gender;
+                this.sub = subject;
+                this.loc = location;
+
+            }
+
+            dte(){
+                let mw = window.open("","abc","width=600,height= 600");
+
+                let output;
+                output ="<h3>Student Form </h3>";
+                output += "Name:" +this.name +"<br><br>";
+                output += "Address:" +this.add +"<br><br>";
+                output += "Gender:" +this.gen +"<br><br>";
+                output += "Subject:" +this.sub +"<br><br>";
+                output += "Current Location:" +this.loc +"<br><br>";
+
+                mw.document.write(output);
+
+            }
+
+        }
+
+        function data(){
+            let m = document.myform.name.value;
+            let n = document.myform.add.value;
+            let o = document.myform.gender.value;
+            let subject = document.getElementsByClassName("sub");
+            let sd ="";
+
+            for (let i = 0; i <subject.length; i++){
+                if(subject[i].checked){
+                    sd += subject[i].value + " ;"
+                }
+            }
+
+
+            let l = document.myform.loc.value;
+
+            let obj = new Student(m,n,o,sd,l);
+            obj.dte()
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

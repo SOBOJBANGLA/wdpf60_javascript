@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="outer-box utility_flex">
+        <div class="box">
+            <div class="inner-box utility_flex">
+                <div class="gfglogo utility_flex">
+                    <h1 class="logo-text">GeeksforGeeks</h1>
+                    <p class="sub-heading">Prime Number Finder</p>
+                </div>
+                <div class="input-container">
+                    <input type="number" class="input-feild" id="input-id" placeholder="Enter the number you want to check">
+                </div>
+                <div class="btn-container utility_flex">
+                    <button class="btn-clear btn-style" id="id-clear">Clear</button>
+                    <button class="btn-submit btn-style" id="sub-id">Submit</button>
+                </div>
+            </div>
+            <div class="para-text">
+                <p class="message" id="dom-msg">Result</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Check if a number is prime
+function checkPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Handle button click
+document.getElementById('sub-id').addEventListener('click', function () {
+    const inputNumber = parseInt(document.getElementById('input-id').value);
+    const resultMessage = document.getElementById('dom-msg');
+    if (checkPrime(inputNumber)) {
+        resultMessage.textContent = `${inputNumber} is a prime number! 🌟`;
+    } else {
+        resultMessage.textContent = `${inputNumber} is not a prime number. 😔`;
+    }
+});
+
+// Handle clear button click
+document.getElementById('id-clear').addEventListener('click', function () {
+    document.getElementById('input-id').value = '';
+    document.getElementById('dom-msg').textContent = 'Result';
+});
+
+    </script>
+
+</body>
+</html>
