@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass-fail</title>
+</head>
+<body>
+    <h1>Ans no-1</h1>
+    <form action="" name="myform">
+        <input type="number" name="mnum" placeholder="Enter MCQ number"><br><br>
+        <input type="number" name="dnum" placeholder="Enter Descriptive number"><br><br>
+        <input type="number" name="enum" placeholder="Enter Evidence number"><br><br>
+        <button type="button" onclick="pass()">Click</button>
+    </form>
+    <div id="show"></div>
+    <script>
+        function pass(){
+            let mcq =document.myform.mnum.value;
+            let des =document.myform.dnum.value;
+            let evi =document.myform.enum.value;
+
+            if(mcq >=80 && des >=60 && evi >=60){
+                document.getElementById("show").innerHTML="You have passed";
+            }else{
+                document.getElementById("show").innerHTML="You have Failed";
+            }
+
+
+
+        }
+
+
+    </script>
+</body>
+</html>

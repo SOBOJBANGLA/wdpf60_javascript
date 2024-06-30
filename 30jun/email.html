@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+</head>
+<body>
+    <h1>Ans no-2</h1>
+
+    <h3>Login Form</h3>
+    <form action="" name="myform">
+        <strong>User Name:</strong>
+        <input type="text" name="name"><br><br>
+        <strong>Password:</strong>
+        <input type="password" name="pass"><br><br>
+        <button type="button" onclick="valid()">Login</button>
+
+
+    </form>
+
+    <script>
+        class Log{
+            constructor(use,ps){
+                this.us= use;
+                this.ps= ps;
+
+            }
+            dte(){
+
+                if(this.us.length < 6) {
+                    alert("User name must be at least 6 characters")
+                }else if(this.ps.length < 8){
+                    alert("Password must be at least 8 characters")
+                }else{
+                     alert("Login valid")
+                }
+
+            }
+
+        }
+
+        function valid(){
+            let u =document.myform.name.value;
+            let p =document.myform.pass.value;
+
+            let obj= new Log(u,p);
+
+            obj.dte()
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>train</title>
+</head>
+<body>
+    <h1>Ans no-3</h1>
+
+    <h3>Trainee Data</h3>
+    <form action="" name="myform">
+        <strong>Name:</strong>
+        <input type="text" name="name" ><br><br>
+        <strong>Address:</strong>
+        <textarea name="add" ></textarea><br><br>
+        <strong>Sex:</strong>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female <br><br>
+
+        <strong>Course:</strong>
+        <input type="checkbox" name="PHP" value="PHP" class="cd">PHP
+        <input type="checkbox" name="JavaScript" value="JavaScript" class="cd">JavaScript
+        <input type="checkbox" name="Python" value="Python" class="cd">Python
+        <input type="checkbox" name="Oracle" value="Oracle" class="cd">Oracle <br><br>
+
+        <strong>Location:</strong>
+       <select name="loc" >
+        <option value="">Select One</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+       </select><br><br>
+
+       <button type="button" onclick="data()">Submit</button>
+
+    </form>
+
+    <script>
+        class Train{
+            constructor(na,ad,se,co,lo){
+                this.n = na;
+                this.d = ad;
+                this.s = se;
+                this.c = co;
+                this.l = lo;
+
+            }
+
+            dte(){
+                let mw = window.open("","abc","width=600,heigh=600");
+                let output;
+                output = "<h3>Trainee Data</h3>";
+
+                output += "Name:"+ this.n+"<br><br>";
+                output += "Address:"+ this.d+"<br><br>";
+                output += "Sex:"+ this.s+"<br><br>";
+                output += "Courses:"+ this.c+"<br><br>";
+                output += "Location:"+ this.l+"<br><br>";
+
+                mw.document.write(output);
+
+            }
+
+        }
+
+        function data(){
+            let a= document.myform.name.value;
+            let b= document.myform.add.value;
+            let c= document.myform.gender.value;
+            let av= document.getElementsByClassName("cd");
+            let w ="";
+
+            for(let i =0 ;i<av.length;i++){
+                if(av[i].checked){
+                    w += av[i].value +" ;"
+                }
+            }
+
+            let f= document.myform.loc.value;
+
+            let obj = new Train(a,b,c,w,f);
+
+            obj.dte()
+            
+
+
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>
