@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+</head>
+<body>
+    <h1>Ans no-3</h1>
+
+<h3>Billing Information</h3>
+    <form action="" name="myform">
+        First Name: <input type="text" name="fname" ><br><br>
+        Last Name: <input type="text" name="lname" ><br><br>
+
+        Sex: <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female <br><br>
+
+        Languages: <input type="checkbox" name="English" value="English" class="la">English
+        <input type="checkbox" name="Bangla" value="Bangla" class="la">Bangla
+        <input type="checkbox" name="French" value="French" class="la">French
+        <input type="checkbox" name="Spanish" value="Spanish" class="la">Spanish <br><br>
+
+       Address: <textarea name="add" ></textarea><br><br>
+
+       District: <select name="dis" >
+        <option value="">Select one</option>
+        <option value="Dhaka">Dhaka</option>
+        <option value="Cumilla">Cumilla</option>
+        <option value="Sylhet">Sylhet</option>
+
+
+       </select><br><br>
+
+       Zip: <input type="text" name="zip"> <br><br>
+
+       <button type="button" onclick="bill()">Submit</button>
+
+
+    </form>
+
+
+    <script>
+         class Valid{
+            constructor(fn,ln,se,la,ar,di,zi){
+                this.fname = fn;
+                this.lname = ln;
+                this.sex = se;
+                this.lan = la;
+                this.addr = ar;
+                this.dist = di;
+                this.zip = zi;
+            }
+
+            dte(){
+                let mw = window.open("","abc","width = 600 , height=600")
+
+                let output;
+                output = "<h3>Billing Information</h3>";
+                output += "First Name:" + this.fname+"<br><br>";
+                output += "Last Name:" + this.lname+"<br><br>";
+                output += "Sex:" + this.sex+"<br><br>";
+                output += "Languages:" + this.lan+"<br><br>";
+                output += "Address:" + this.addr+"<br><br>";
+                output += "District:" + this.dist+"<br><br>";
+                output += "Zip:" + this.zip+"<br><br>";
+
+                mw.document.write(output);
+               
+
+            }
+
+        }
+
+        function bill(){
+            let fn =document.myform.fname.value;
+            let ln =document.myform.lname.value;
+            let s =document.myform.gender.value;
+            let lang  =document.getElementsByClassName("la");
+            let lt = "";
+
+            for (let i = 0 ; i <lang.length;i++){
+                if(lang[i].checked){
+                    lt += lang[i].value + " ;"
+                }
+            }
+
+            let ad =document.myform.add.value;
+            let ds =document.myform.dis.value;
+            let z =document.myform.zip.value;
+
+            let obj = new Valid(fn,ln,s,lt,ad,ds,z);
+            obj.dte();
+
+
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

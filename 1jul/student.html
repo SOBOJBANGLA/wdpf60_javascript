@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student</title>
+</head>
+<body>
+    <h3>Ans no-1</h3>
+    <h1>Student Registration</h1>
+
+    <form action="" name="myform">
+        Name: <input type="text" name="name" placeholder="Enter name"><br><br>
+        Email: <input type="text" name="email" placeholder="Enter email"><br><br>
+        Phone: <input type="text" name="phone" placeholder="Enter phone"><br><br>
+        Password: <input type="text" name="pass" placeholder="Enter password"><br><br>
+        Repeat password: <input type="text" name="rpass" placeholder="Enter Confirm password"><br><br>
+        <button type="button" onclick="data()">Submit</button>
+
+    </form>
+
+    <script>
+        class Valid{
+            constructor(n,e,p,ps,rp){
+                this.name = n;
+                this.email = e;
+                this.phone = p;
+                this.pass = ps;
+                this.rpass = rp;
+            }
+
+            dte(){
+                let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+                let res = this.email.search(pattern);
+
+                if(this.name == ""){
+                    alert("Name must be filled")
+                }else if(this.email == ""){
+                    alert("Email must be filled")
+                }else if(res == -1){
+                    alert("Email is wrong")
+                }else if(this.phone == ""){
+                    alert("Phone Number must be filled")
+                }else if(this.pass == ""){
+                    alert("Password must be filled")
+                }else if(this.pass.length <6){
+                    alert("Password must be 6 length")
+                }else if(this.pass != this.rpass ){
+                    alert("Password must be matched")
+                }else{
+                    alert("Form Valid")
+                }
+
+            }
+
+        }
+
+        function data(){
+            let ne =document.myform.name.value;
+            let em =document.myform.email.value;
+            let ph =document.myform.phone.value;
+            let pa =document.myform.pass.value;
+            let rp =document.myform.rpass.value;
+
+            let obj = new Valid(ne,em,ph,pa,rp);
+
+            obj.dte()
+
+        }
+
+    </script>
+</body>
+</html>

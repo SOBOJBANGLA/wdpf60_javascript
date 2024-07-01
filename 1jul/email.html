@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email</title>
+</head>
+<body>
+
+    <h3>Ans no-2</h3>
+    
+
+    <form action="" name="myform"> 
+        Email: <input type="text" name="email" placeholder="Enter email"><br><br>
+        <button type="button" onclick="data()">Submit</button>
+
+    </form>
+
+    <script>
+        class Valid{
+            constructor(e,){
+                this.email = e;
+              
+            }
+
+            dte(){
+                let pattern = /[A-z0-9]+@[A-z]+\.[A-z]/;
+                let res = this.email.search(pattern);
+
+               if(this.email == ""){
+                    alert("Email must be filled")
+                }else if(res == -1){
+                    alert("Email is invalid")
+                }else{
+                    alert("Email is Valid")
+                }
+
+            }
+
+        }
+
+        function data(){
+          
+            let em =document.myform.email.value;
+            let obj = new Valid(em);
+
+            obj.dte()
+
+        }
+        </script>
+</body>
+</html>
