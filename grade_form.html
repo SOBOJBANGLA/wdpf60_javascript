@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myform">
+        <input type="number" name="anum" placeholder="Enter Number"><br><br>
+       
+        <button onclick="grade()" type="button">Click Here</button>
+    </form>
+
+
+    <div id="result"></div>
+    <script>
+        function grade(){
+            let m = document.myform.anum.value;
+           
+
+
+            if(m>=80){
+                document.getElementById("result").innerHTML = "A+";
+            }else if(m>=70){
+                document.getElementById("result").innerHTML = "A";
+            }else if (m>=60){
+                document.getElementById("result").innerHTML = "B";
+            }else{
+                document.getElementById("result").innerHTML = "Fail";
+            }
+        }
+    </script>
+</body>
+</html>
